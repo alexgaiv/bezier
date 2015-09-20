@@ -114,26 +114,12 @@ void AppWindow::OnDisplay()
 	
 	if  (surfType == NURBS)
 	{
-		/*float outsidePts[5][2] =
-			{{0.0f, 0.0f}, {1.0f, 0.0f}, {1.0f, 1.0f}, {0.0f, 1.0f}, {0.0f, 0.0f}};
-		float insidePts[4][2] =
-			{{0.25f, 0.25f}, {0.5f, 0.5f}, {0.75f, 0.25f}, { 0.25f, 0.25f}};*/
-
 		glFrontFace(GL_CCW);
 		gluBeginSurface(pMesh);
 			gluNurbsSurface(pMesh, 8, knots, 8, knots,
 				sizeof(float)*3, 3,
 				ctrlPoints[0].data, 4, 4,
 				GL_MAP2_VERTEX_3);
-
-			/*gluBeginTrim(pMesh);
-			gluPwlCurve(pMesh, 5, &outsidePts[0][0], 2, GLU_MAP1_TRIM_2);
-			gluEndTrim(pMesh);
-
-			gluBeginTrim(pMesh);
-			gluPwlCurve(pMesh, 4, &insidePts[0][0], 2, GLU_MAP1_TRIM_2);
-			gluEndTrim(pMesh);*/
-
 		gluEndSurface(pMesh);
 	}
 	else {
