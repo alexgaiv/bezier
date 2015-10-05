@@ -333,7 +333,7 @@ void AppWindow::FrustumToWindow(const Vector3f &origin, int winWidth, int winHei
 
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	glOrtho(0, winWidth, winHeight, 0, -1.0f, 1.0f);
+	glOrtho(0, winWidth, winHeight, 0, -1.0, 1.0);
 
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
